@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unitask/app/router/app_router.dart';
 import 'package:unitask/app/theme/app_theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: UniTaskApp()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class UniTaskApp extends StatelessWidget {
+  const UniTaskApp({super.key});
 
   // This widget is the root of your application.
   @override
