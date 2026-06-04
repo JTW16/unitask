@@ -8,7 +8,7 @@ Widget preview() {
     spacing: 10,
     children: const [
       PriorityBadge(priority: Priority.high),
-      PriorityBadge(priority: Priority.mid),
+      PriorityBadge(priority: Priority.medium),
       PriorityBadge(priority: Priority.low),
     ],
   );
