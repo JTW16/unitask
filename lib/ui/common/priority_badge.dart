@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:unitask/app/theme/preview.dart';
 import 'package:unitask/core/enum/priority.dart';
 
 @AppThemePreview(group: 'Badge', name: '우선순위')
+Widget preview() {
+  return Row(
+    spacing: 10,
+    children: const [
+      PriorityBadge(priority: Priority.high),
+      PriorityBadge(priority: Priority.mid),
+      PriorityBadge(priority: Priority.low),
+    ],
+  );
+}
+
 class PriorityBadge extends StatelessWidget {
   const PriorityBadge({super.key, required this.priority});
   final Priority priority;
@@ -17,9 +27,14 @@ class PriorityBadge extends StatelessWidget {
         borderRadius: .circular(50),
       ),
       child: Row(
+        spacing: 5,
         mainAxisSize: .min,
         children: [
-          Icon(LucideIcons.dot, color: priority.primary, size: 20),
+          Container(
+            width: 6,
+            height: 6,
+            decoration: BoxDecoration(shape: .circle, color: priority.primary),
+          ),
           Text(
             priority.title,
             style: TextStyle(
